@@ -1,0 +1,356 @@
+body{font-family: 'soDoSans';}
+.container{
+    width: 94%;
+    margin: auto;
+}
+.dnone{display: none;}
+.txtblack{color: #000;}
+.txtwhite{color: #fff;}
+.p20{padding: 30px 0;}
+nav svg{width: 46px}
+nav{
+    padding: 10px 0;
+    box-shadow: 0 1px 3px #0000001a, 0 2px 2px #0000000f, 0 0 2px #00000012;
+}
+nav .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.burgermenu{
+    display: none;
+    position: absolute;
+    right: 0 ;
+    background: #fff;
+    padding: 40px;
+    width: 80%;
+    height: 89.7vh;
+}
+.burgermenu .nav-right a, .burgermenu .nav-left ul{display: flex;}
+.burgermenu .nav-left ul{
+    flex-direction: column;
+    gap: 40px;
+    padding: 25px 0;
+}
+.burgermenu hr{opacity: 40%;}
+.burgermenu .nav-right .nav-btns{margin: 35px 0 20px 0;}
+.nav-left ul,.nav-right a, nav .nav-btns{display: none;}
+.nav-right svg{width: 29px !important;}
+.nav-right a{
+    align-items: center; 
+    gap: 5px;
+    color: #000;
+}
+.nav-left ul li a{
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: .1em;
+    font-size: .95em;
+}
+.nav-btns button, .card-sum button, .nav-reward button, .star button{
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 1em;
+    font-family: 'soDoSans';
+    transition: .7s;
+    cursor: pointer;
+}
+.noborder, .nav-reward button{
+    border: 1px solid #fff !important;
+    background: transparent;
+    color: #fff;
+}
+.lm{
+    border: 1px solid #1e3932 !important;
+    color: #1e3932;
+}
+.nav-btns button:first-child{
+    background: #fff;
+    border: 1.5px solid #000;
+    margin-right: 15px;
+}
+.nav-btns button:first-child:hover{background: #dddddd;}
+.nav-btns button:last-child:hover{background: #575656;}
+.card-sum button:hover, .nav-reward button{background: #5756562e;}
+.nav-btns button:last-child{
+    background: #000;
+    border: 0;
+    color: #fff;
+}
+.main-cards .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.main-cards .card-text {
+    text-align: center;
+    padding: 30px;
+}
+.main-cards .card-sum p{
+    padding: 30px 0;
+    line-height: 2;
+    font-size: 1em;
+}
+.main-cards h2{font-size: 1.3em;}
+.main-cards .card-img img{max-width: 100%;}
+.card-sum button{border: 0;font-weight: 600;}
+.articles p{
+    padding: 1.5rem;
+    font-size: .75em;
+    line-height: 2;
+    margin: auto;
+    text-align: center;
+}
+.articles a, .star a, .step a, .questions a{color: #000; text-decoration: underline;}
+footer{
+    padding: 20px;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, .1), 0 -2px 2px rgba(0, 0, 0, .06), 0 0 2px rgba(0, 0, 0, .07);
+}
+.footer-top{display: none;}
+footer hr{
+    opacity: 30%;
+    width: 94%;
+}
+.accordion {
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+    padding: 20px 0;
+    width: 100%;
+    border: 0;
+    text-align: left;
+    outline: none;
+    font-size: 1.1em;
+    transition: 0.4s;
+}
+.accordion:after {
+    content: '﹀';
+    color: #000;
+    font-size: 1.2em;
+    float: right;
+}
+.active:after { content: "︿" }
+.panel {
+    padding: 0 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease-out;
+}
+.panel p{ margin: 25px 0}
+.footer-top h3,.menu-left li{padding-bottom: 20px;}
+.footer-top li,.footer-bottom li, .accardions li{margin: 30px 0;}
+.footer-top li a, .accardions li a{
+    color: #00000094;
+    font-size: 1.1em;
+}
+.footer-top li a:hover, .category ul a{color: #000;}
+.footer-bottom .icons a{
+    font-size: 1.4em;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-bottom .icons{display: flex; gap: 3.5vw; padding: 25px 0;}
+.footer-bottom a{color: #000; font-size: 1.1em;}
+.footer-bottom ul li a:hover{text-decoration: underline;}
+.footer-bottom p, .menu-left a{color: #575656;}
+
+
+/*  M E N U    C S S  */
+.wrapper{
+    width: 81vw;
+    /* width: 83.5%; */
+    margin: auto;
+}
+.category{
+    background: #f9f9f9;
+    padding: 20px 0;
+    margin: 3px 0;
+    border-bottom:1px solid #f9f9f9 ;
+}
+.category ul{
+    display: flex;
+    gap: 2vw;
+}
+.activ{border-bottom: 1px solid #1e3932;}
+.menu-all{
+    display: flex;
+    gap: 8vw;
+}
+.menu-right{width: 100%;}
+.menu-right h2{
+    padding: 50px 0 20px 0;
+    border-bottom: 1px solid #a5a5a57c;
+}
+.coffees{
+    display: flex;
+    gap: 2vw;
+    /* padding: 20px 0; */
+    /* width: 100%; */
+}
+/* .coffees .coffee{width: 48%;} */
+.coffees .coffee a{
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    color: #000;
+}
+.c-left{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.coffees .coffee img{
+    border-radius: 50%;
+    max-width: 75px;
+}
+
+
+/*     R E W A R D S     C S S  */
+.nav-reward .container{
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.star{
+    background-color: #d4e9e2 !important;
+    background: url('../img/star-mobil.webp')center/cover;
+    height: 72vh;
+    text-align: center;
+    padding-top: 40px;
+}
+.star-text h2{font-size: 1.7em;}
+.star-text p{padding: 15px 0; font-size: 1em;}
+.star button{background-color: #00754a; border: 0; color: #fff;}
+.getstarted{padding: 15px;}
+.getstarted .title{text-align: center;}
+.steps{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+.step{
+    display: flex;
+    gap: 15px;
+}
+.step span{
+    border: 2px solid #006241;
+    padding: 10px 20px;
+    border-radius: 50%;
+    color: #006241;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.step h3{padding-bottom:20px;font-size: 1.1em;}
+.step a,.questions a{color: #006241;}
+.step p{font-size: .8em;}
+.step-text{max-width: 400px;}
+.step img{width: 112px;}
+.questions{
+    height: 42vh;
+    padding: 80px;
+    margin-left: 150px;
+}
+.hBig{
+    font-size: 2em;
+    color: #1e3932;
+    text-align: center;
+}
+.previous p{color:#575656; font-size: 1.2em;}
+/*            D E S K T O P            */
+@media only screen and (min-width: 768px) {
+    .containerdesk{
+        width: 94%;
+        margin: auto;
+    }
+    .reverse{
+        display: flex;
+        flex-direction: row-reverse !important;
+    }
+    .accardions, .nav-reward button{display: none;}
+    nav svg{width: 57px}
+    .nav-left,.nav-left ul,.nav-right{
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+    }
+    .articles p{
+        max-width: 50%;
+        padding: 4rem;
+        font-size: .9em;
+    }
+    .nav-right a{display: flex;}
+    nav .nav-btns,.step{display: block;}
+    .nav-right a:hover,.nav-left a:hover{color: #006241}
+    .bars, .burgermenu{display: none;}
+    .card-sum h1{font-size: 3.2em;}
+    .fs15{font-size: 1.5em !important;}
+    .footer-top{
+        display: flex;
+        gap: 3vw;
+    }
+    .footer-bottom .icons{ gap: 1vw;}
+    .main-cards .card{flex-direction: row;}
+    .main-cards .card-img {width: calc(100%*(6 / 12));}
+    .main-cards .card-text {
+        width: calc(100%*(6 / 12));
+        padding: 4rem;
+    }
+    .main-cards .card-sum{
+        max-width: 87%;
+        margin: auto;
+    }
+    .main-cards .card-sum p{font-size: 1.2em;}
+    .main-cards .card-img img{max-width: 100%;}
+    .card-sum button{border: 0;font-weight: 600;}
+    .star{
+        background: url('../img/star.webp')center/cover;
+        height: 100vh;
+        align-items: center;
+        display: flex;
+        text-align: start;
+        padding-top: 0;
+    }
+    .star-text h2{font-size: 2.5em;}
+    .star-text p{padding: 30px 0; font-size: 1.2em;}
+    .getstarted{
+        height: 80vh;
+        padding: 80px;
+    }
+    .getstarted .title h2{font-size: 2em;}
+    .steps{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        gap: 4vw;
+    }
+    .step span{
+        border: 2px solid #006241;
+        padding: 10px 20px;
+        border-radius: 50%;
+        color: #006241;
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+    .step h3{padding: 30px 0;font-size: 1.2em;}
+    .step a{color: #006241;}
+    .step-text{max-width: 400px;}
+    .step p{font-size: initial;}
+    .hBig{font-size: 3.5em;}
+}
+
+/*              T A B L E T                */
+@media only screen and (min-width: 1024px) {
+    
+}
