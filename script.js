@@ -92,3 +92,53 @@ function Previous() {
         </div>`
 }
 
+const content = document.querySelector(".content")
+const num = document.querySelector(".num")
+function ulduzlar(arg) {
+    if(arg == 25){
+        content.innerHTML = `
+        <div class="box p20">
+                        <img src="../img/25.webp" alt="">
+                        <div class="text">
+                            <h2>Customize your drink</h2>
+                            <p class="p20">Make your drink just right with an extra espresso shot, nondairy milk or a dash of your favorite syrup.</p>
+                        </div>
+                    </div>`
+    }else if (arg == 100){
+        content.innerHTML = `
+        <div class="box p20">
+                        <img src="../img/100.webp" alt="">
+                        <div class="text">
+                            <h2>Brewed hot or iced coffee or tea, bakery item, packaged snack and more</h2>
+                            <p class="p20">Treat yourself to an iced coffee, buttery croissant, bag of chips and more.</p>
+                        </div>
+                    </div>`
+    }else if(arg == 200){
+        content.innerHTML = `
+        <div class="box p20">
+                        <img src="../img/200.webp" alt="">
+                        <div class="text">
+                            <h2>Handcrafted drink (Cold Brew, lattes and more) or hot breakfast</h2>
+                            <p class="p20">Turn good mornings great with a delicious handcrafted drink of your choice, breakfast sandwich or oatmeal on us.</p>
+                        </div>
+                    </div>`
+    }else if(arg == 300){
+        content.innerHTML = `
+        <div class="box p20">
+                        <img src="../img/300.webp" alt="">
+                        <div class="text">
+                            <h2>Sandwich, protein box or at-home coffee</h2>
+                            <p class="p20">Enjoy a PM pick-me-up with a lunch sandwich, protein box or a bag of coffee—including Starbucks VIA Instant®.</p>
+                        </div>
+                    </div>`
+    }else{
+        content.innerHTML = `
+        <div class="box p20">
+                        <img src="../img/400.webp" alt="">
+                        <div class="text">
+                            <h2>Select Starbucks® merchandise</h2>
+                            <p class="p20">Take home a signature cup, drink tumbler or your choice of coffee merch up to $20.</p>
+                        </div>
+                    </div>`
+    }
+}
