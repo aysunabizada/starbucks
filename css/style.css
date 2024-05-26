@@ -148,20 +148,21 @@ footer hr{
 }
 .footer-top li a:hover, .category ul a{color: #000;}
 .footer-bottom .icons a{
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #fff;
     border-radius: 50%;
     background: #000;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .footer-bottom .icons{display: flex; gap: 3.5vw; padding: 25px 0;}
-.footer-bottom a{color: #000; font-size: 1.1em;}
+.footer-bottom a{color: #000; font-size: .85em;}
 .footer-bottom ul li a:hover{text-decoration: underline;}
 .footer-bottom p, .menu-left a{color: #575656;}
+.footer-bottom p {font-size: .7em;}
 
 
 /*  M E N U    C S S  */
@@ -178,39 +179,33 @@ footer hr{
 }
 .category ul{
     display: flex;
-    gap: 2vw;
+    gap: 4vw;
 }
 .activ{border-bottom: 1px solid #1e3932;}
 .menu-all{
     display: flex;
     gap: 8vw;
 }
-.menu-right{width: 100%;}
+.menu-right,.coffees .coffee{width: 100%;}
 .menu-right h2{
     padding: 50px 0 20px 0;
     border-bottom: 1px solid #a5a5a57c;
 }
 .coffees{
     display: flex;
-    gap: 2vw;
-    /* padding: 20px 0; */
-    /* width: 100%; */
+    gap: 3vh;
+    flex-wrap: wrap;
 }
-/* .coffees .coffee{width: 48%;} */
+.coffee h3{font-weight: 500;}
 .coffees .coffee a{
     display: flex; 
     align-items: center; 
     gap: 15px; 
     color: #000;
 }
-.c-left{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
 .coffees .coffee img{
     border-radius: 50%;
-    max-width: 75px;
+    max-width: 70px;
 }
 
 
@@ -256,23 +251,28 @@ footer hr{
 .step p{font-size: .8em;}
 .step-text{max-width: 400px;}
 .step img{width: 112px;}
-.questions{
-    height: 42vh;
-    padding: 80px;
-    margin-left: 150px;
-}
 .hBig{
     font-size: 2em;
     color: #1e3932;
     text-align: center;
 }
 .previous p{color:#575656; font-size: 1.2em;}
+.questions{
+    height: 42vh;
+    max-width: 550px;
+    padding: 20px;
+}
 /*            D E S K T O P            */
 @media only screen and (min-width: 768px) {
+    .coffees{gap: 2.2vw;}
+    .coffees .coffee{width: 48%;}
+    .coffees .coffee img{max-width: 110px;}
+    .menu-left{display: block;}
     .containerdesk{
         width: 94%;
         margin: auto;
     }
+    .category ul{gap: 2vw;}
     .reverse{
         display: flex;
         flex-direction: row-reverse !important;
@@ -321,6 +321,10 @@ footer hr{
         text-align: start;
         padding-top: 0;
     }
+    .questions{
+        margin: auto;
+        max-width: 800px;
+    }
     .star-text h2{font-size: 2.5em;}
     .star-text p{padding: 30px 0; font-size: 1.2em;}
     .getstarted{
@@ -348,9 +352,10 @@ footer hr{
     .step-text{max-width: 400px;}
     .step p{font-size: initial;}
     .hBig{font-size: 3.5em;}
+    .footer-bottom a{font-size: 1.1em;}
 }
 
 /*              T A B L E T                */
-@media only screen and (min-width: 1024px) {
-    
+@media only screen and (max-width: 1024px) {
+    .menu-left{display: none;}
 }

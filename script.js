@@ -29,6 +29,7 @@ var acc = document.getElementsByClassName("accordion");
 
 let categoriesData;
 let menuData;
+
 fetch('https://starbucks.yetim.me/categories')
     .then((res) => res.json())
     .then((resJson) => {
@@ -39,28 +40,34 @@ fetch('https://starbucks.yetim.me/categories')
         }
     })
 
-fetch('https://starbucks.yetim.me/menu')
-    .then((res) => res.json())
-    .then((resJson) => {
-        menuData = resJson
-        console.log(menuData)
-        for (let i = 0; i < menuData.length; i++) {
-            coffees.innerHTML += `
-                <div class="coffee">
-                    <a href="#">
-                        <img src="${menuData[i].img}" alt="">
-                        <h3>${menuData[i].name}</h3>
-                    </a>
-                </div>`;
-        }
-    })
+
+function fetchMenu() {
+    fetch('https://starbucks.yetim.me/menu')
+        .then((res) => res.json())
+        .then((resJson) => {
+            menuData = resJson
+            console.log(menuData)
+            const uniqueItems = [...new Set(menuData.map(item => item.subcategory))].map(subcategory => {
+                return menuData.find(item => item.subcategory === subcategory);
+            })
+            coffees.innerHTML = uniqueItems.map(item => 
+                `<div class="coffee">
+                        <a href="#">
+                            <img src="${item.img}">
+                            <h3>${item.subcategory}</h3>
+                        </a>
+                    </div>`).join('')
+        })
+}
+
+fetchMenu();
 
 function Favorites() {
     menuAll.innerHTML = ''
     menuAll.innerHTML = `
         <div class="previous wrapper">
             <h2 class="p20">Favorites</h2>
-            <img src="../img/kaset.webp" style="width:220px;" alt="">
+            <img src="../img/kaset.webp" style="width: 220px; padding: 20px 0;" alt="">
             <h2>Save your favorite <br> mixes</h2>
             <p class="p20">Use the heart to save <br> customizations. Your favorites will <br> appear here to order again.</p>
             <div class="nav-btns">
@@ -69,6 +76,7 @@ function Favorites() {
             </div>
         </div>`
 }
+
 function Previous() {
     menuAll.innerHTML = ''
     menuAll.innerHTML = `
