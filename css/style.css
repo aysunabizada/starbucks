@@ -22,6 +22,7 @@ nav .container{
 .burgermenu{
     display: none;
     position: absolute;
+    z-index: 9999999999999;
     right: 0 ;
     background: #fff;
     padding: 40px;
@@ -50,7 +51,7 @@ nav .container{
     letter-spacing: .1em;
     font-size: .95em;
 }
-.nav-btns button, .card-sum button, .nav-reward button, .star button, .keepReward button,.recCard button, #ordr{
+.nav-btns button, .card-sum button, .nav-reward button, .star button, .keepReward button,.recCard button, #ordr, #custom, .lastDiv button{
     border-radius: 50px;
     padding: 8px 16px;
     font-size: 1em;
@@ -58,7 +59,7 @@ nav .container{
     transition: .7s;
     cursor: pointer;
 }
-.noborder, .nav-reward button, .recCard button:first-child{
+.noborder, .nav-reward button, .recCard button:first-child, .lastDiv button{
     border: 1px solid #fff !important;
     background: transparent !important;
     color: #fff;
@@ -170,7 +171,7 @@ footer hr{
 
 /*  M E N U    C S S  */
 .wrapper{
-    width: 81vw;
+    width: 93vw;
     margin: auto;
 }
 .category{
@@ -190,7 +191,7 @@ footer hr{
 }
 .menu-right,.coffees .coffee{width: 100%;}
 .menu-right h2{
-    padding: 50px 0 20px 0;
+    padding: 40px 0 20px 0;
     border-bottom: 1px solid #a5a5a57c;
 }
 #mTitle{color: #555; font-size: 1.1em;}
@@ -211,7 +212,7 @@ footer hr{
     max-width: 70px;
 }
 .txtgray{color: #737272;}
-.basketCof,.fixedGreen {background: #1f3933;}
+.basketCof,.fixedGreen ,.lastDiv{background: #1f3933;}
 .basketCof img{width: 300px; height: 300px;}
 .basketCof h1{font-size: 1.8em;}
 .basketCof p{padding: 20px 0; color: #949393; font-size: 1.2em;}
@@ -237,15 +238,19 @@ footer hr{
     display: inline-block;
 }
 #bag h3{color: #fff; text-align: center;margin-top: 10px;}
-.table{justify-content: space-around;}
-.table-left,.table-right{width: 35%;}
-.table-left h2, .table-right h2{position: relative; padding: 15px 10px;}
+.table{flex-direction: column;}
+.table-left,.table-right{width: 100%;}
+.table-left h2, .table-right h2{
+    position: relative; 
+    padding: 15px 5px;
+    font-size: 1.2em;
+}
 .table-left h2::after, .table-right h2::after{
     background: #d4e9e2;
     border-radius: 12px;
     bottom: 0;
     content: "";
-    height: 5px;
+    height: 4px;
     left: 0;
     position: absolute;
     width: 100%;
@@ -254,8 +259,10 @@ footer hr{
     display: flex;
     gap: 30px;
     justify-content: center;
-    padding: 40px 0;
+    padding: 40px 20px;
 }
+.fieldset h3{font-size: .9em;}
+.fieldset p{font-size: .75em;}
 .c{
     height: 45px;
     width: 25px;
@@ -265,15 +272,73 @@ footer hr{
 .fieldset #cup2{background: url('../img/cup2.svg') center/contain no-repeat;}
 .fieldset #cup3{background: url('../img/cup3.svg') center/contain no-repeat;}
 .fieldset #cup4{background: url('../img/cup4.svg') center/contain no-repeat;}
-/* .HereİsBasket{position: relative;} */
 #ordr{
     position: absolute;
+    float: right;
+    top: 36%;
     right: 5%;
     z-index: 999999999;
     box-shadow: 0 0 6px #0000003d, 0 8px 12px #00000024;
     padding: 18px 2.2rem;
     font-size: 1.2rem;
 }
+.table select,.shorts{
+    padding: 10px 15px;
+    font-family: 'soDoSans';
+    font-size: 1em;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+    outline-color: #00754a;
+}
+.shorts{
+    border: 1px solid #777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shorts button{
+    border: 2px solid #00754a;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #006241;
+    background-color: transparent;
+}
+.shorts span{margin:0 7px;}
+.table-right svg{color: #cba258;}
+#custom{
+    padding: 15px 20px;
+    margin: 40px 0 20px 80px;
+    border: 0;
+    display: flex;
+    gap: 10px;
+    background-color: #1e3932;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: 0 0 6px #0000003d, 0 8px 12px #00000024;
+}
+#legend{
+    color: #777;
+    margin: 10px 0 0 15px;
+    position: absolute;
+    font-size: .85em;
+    background: #fff;
+}
+.lastDiv p:first-child{
+    border: 1px solid #cba258;
+    color: #cba258;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+}
+.lastDiv p:nth-child(2){
+    padding: 20px 0;
+    color: #ffffff80;
+    font-size: .8em;
+}
+
 /*     R E W A R D S     C S S  */
 .nav-reward .container{
     color: #fff;
@@ -300,10 +365,7 @@ footer hr{
     flex-direction: column;
     gap: 40px;
 }
-.step{
-    display: flex;
-    gap: 15px;
-}
+.step{ display: flex; gap: 15px;}
 .step span{
     border: 2px solid #006241;
     padding: 10px 20px;
@@ -362,10 +424,7 @@ footer hr{
     gap: 5vw;
     flex-direction: column;
 }
-.cashCard .phone{
-    gap: 20px;
-    width: 100%;
-}
+.cashCard .phone{ gap: 20px; width: 100%;} 
 .cashCard .phone img{width: 122px;}
 .cashCard hr{
     opacity: 30%;
@@ -384,10 +443,7 @@ footer hr{
     flex-direction: column;
 }
 .middle{width: 95%; margin: auto;}
-.inner-sum {
-    flex-direction: column;
-    gap: 2vw;
-}
+.inner-sum { flex-direction: column; gap: 2vw;}
 .inner-sum div{
     display: flex;
     flex-direction: row;
@@ -428,7 +484,7 @@ footer hr{
     margin: 30px 0;
     margin: auto;
 }
-.egift img{width: 100px;padding: 20px;}
+.egift img{width: 100px; padding: 20px;}
 .recCard{background: #d4e9e2}
 .recCard .wrapper{
     display: flex;
@@ -436,18 +492,15 @@ footer hr{
     height: 150px;
     gap: 1vw;
 }
-.cards{
-    display: flex;
-    gap: 2vw;
-}
+.cards{display: flex; gap: 2vw;}
 .cards img{
     width: 330px;
     border-radius: 10px;
 }
 
-
 /*            D E S K T O P            */
 @media only screen and (min-width: 768px) {
+    .wrapper{width: 81vw;}
     .fcolumn{flex-direction: row;}
     .w50{width: 50%;}
     .about p{font-size: initial;}
@@ -456,10 +509,7 @@ footer hr{
     .coffees .coffee{width: 48%;}
     .coffees .coffee img{max-width: 110px;}
     .menu-left{display: block;}
-    .containerdesk{
-        width: 94%;
-        margin: auto;
-    }
+    .containerdesk{ width: 94%; margin: auto;}
     .category ul{gap: 2vw;}
     .reverse{
         display: flex;
@@ -484,10 +534,7 @@ footer hr{
     .bars, .burgermenu{display: none;}
     .card-sum h1{font-size: 3.2em;}
     .fs15{font-size: 1.5em !important;}
-    .footer-top{
-        display: flex;
-        gap: 3vw;
-    }
+    .footer-top{ display: flex; gap: 3vw;} 
     .footer-bottom .icons{ gap: 1vw;}
     .main-cards .card{flex-direction: row;}
     .main-cards .card-img {width: calc(100%*(6 / 12));}
@@ -495,10 +542,7 @@ footer hr{
         width: calc(100%*(6 / 12));
         padding: 4rem;
     }
-    .main-cards .card-sum{
-        max-width: 87%;
-        margin: auto;
-    }
+    .main-cards .card-sum{max-width: 87%; margin: auto;}
     .main-cards .card-sum p{font-size: 1.2em;}
     .main-cards .card-img img{max-width: 100%;}
     .card-sum button{border: 0;font-weight: 600;}
@@ -510,16 +554,10 @@ footer hr{
         text-align: start;
         padding-top: 0;
     }
-    .questions{
-        margin: auto;
-        max-width: 800px;
-    }
+    .questions{margin: auto; max-width: 800px;}
     .star-text h2{font-size: 2.5em;}
     .star-text p{padding: 30px 0; font-size: 1.2em;}
-    .getstarted{
-        height: 80vh;
-        padding: 80px;
-    }
+    .getstarted{ height: 80vh; padding: 80px;}
     .getstarted .title h2{font-size: 2em;}
     .steps{
         display: flex;
@@ -542,10 +580,7 @@ footer hr{
     .step p{font-size: initial;}
     .hBig{font-size: 3.5em;}
     .footer-bottom a,.getfavorites .content .box p{font-size: 1.1em;}
-    .getfavorites .content .box{
-        flex-direction: row;
-        text-align: initial;
-    }
+    .getfavorites .content .box{flex-direction: row; text-align: initial;}
     .numbers{font-size: 1.5em;gap: 3vw;}
     .cashCard .dollar{width: 25%;}
     .cashCard .phones{flex-direction: row;}
@@ -553,24 +588,15 @@ footer hr{
     .cashCard .phone p{max-width: 322px;}
     .keepReward .inner{ width: 95%; flex-direction: row;}
     .middle{width: 60%;}
-    .inner-sum {
-        text-align: center;
-        flex-direction: row;
-    }
-    .inner-sum div{
-        flex-direction: column;
-        height: 40vh;
-    }
+    .inner-sum {text-align: center; flex-direction: row;}
+    .inner-sum div{flex-direction: column; height: 40vh;}
     .inner-sum img{width: 210px;}
     #star-left{background: url('../img/lstar.svg')center/cover;}
     #star-right{background: url('../img/rstar.svg')center/cover; }
     .basketCof h1{font-size: 2.5em;}
     .basketCof p{font-size: 1.7em;}
     .basketCof .wrapper{align-items: center;gap: 10vw;}
-    .fixedGreen{
-        height: 13vh;
-        justify-content: space-around;
-    }
+    .fixedGreen{height: 13vh; justify-content: space-around;}
     .fixedGreen .locator a div{
         display: initial;
         font-size: initial;
@@ -578,12 +604,27 @@ footer hr{
         color: inherit;
         align-items: initial;
     }
+    .table{justify-content: space-around; flex-direction: row;}
+    .table-left,.table-right{width: 35%;}
+    .table-left h2, .table-right h2{font-size: 1.5em;}
+    .fieldset{padding: 40px 0}
+    .fieldset h3{font-size: inherit;}
+    .fieldset p{font-size: inherit;}
+    .table select,.shorts{padding: 20px 15px; font-size: 1.2em;}
+    .shorts button{padding: 5px 9px;}
+    #custom{padding: 20px; margin: 30px 0;}
+    #legend{
+        color: #777;
+        margin: 10px 0 0 15px;
+        position: absolute;
+        background: #fff;
+    }
+    .lastDiv p:nth-child(2){width: 500px; font-size: 1em;}
 }
-
 /*              T A B L E T                */
 @media only screen and (max-width: 1024px) {
     .menu-left{display: none;}
-    .row{flex-direction: column;gap: 50px;}
+    .row{flex-direction: column; gap: 50px;}
     .basketCof .wrapper{
         gap: 1vw; 
         flex-direction: column; 
@@ -596,4 +637,6 @@ footer hr{
         color: #575656;
         align-items: center;
     }
+    .table{flex-direction: column;}
+    .table-left,.table-right{width: 100%;}
 }
