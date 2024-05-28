@@ -1,9 +1,13 @@
 const drinks = document.querySelector("#drinks");
-const food = document.querySelector("#food");
-const athome = document.querySelector("#athome");
-const merc = document.querySelector("#merc");
 const menuAll = document.querySelector(".menu-all");
 const coffees = document.querySelector(".coffees");
+const content = document.querySelector(".content");
+const num = document.querySelector(".num");
+const otherCatg = document.querySelector(".otherCatg");
+const title = document.querySelector("#title");
+const mTitle = document.querySelector("#mTitle");
+const h1 = document.querySelector("#h1");
+const titleTag = document.querySelector("#titleTag");
 
 
 //hamburger component
@@ -27,19 +31,8 @@ var acc = document.getElementsByClassName("accordion");
         });
     }
 
-let categoriesData;
-let menuData;
-
-fetch('https://starbucks.yetim.me/categories')
-    .then((res) => res.json())
-    .then((resJson) => {
-        categoriesData = resJson
-        console.log(categoriesData)
-        for (let i = 0; i < categoriesData.length; i++) {
-            drinks.innerHTML += `<li><a href="#">${categoriesData[i]}</a></li>`
-        }
-    })
-
+let categoriesData=[]
+let menuData =[]
 
 function fetchMenu() {
     fetch('https://starbucks.yetim.me/menu')
@@ -52,7 +45,7 @@ function fetchMenu() {
             })
             coffees.innerHTML = uniqueItems.map(item => 
                 `<div class="coffee">
-                        <a href="#">
+                        <a href="#" onclick="getCoffee('${item.subcategory}')">
                             <img src="${item.img}">
                             <h3>${item.subcategory}</h3>
                         </a>
@@ -60,7 +53,45 @@ function fetchMenu() {
         })
 }
 
+
+function fetchCategories() {
+    fetch('https://starbucks.yetim.me/categories')
+        .then((res) => res.json())
+        .then((resJson) => {
+            categoriesData = resJson
+            console.log(categoriesData)
+            categoriesData.forEach(category => {
+                drinks.innerHTML += `<li onclick="getCoffee('${category}')"><a href="#">${category}</a></li>`
+            })
+        })
+}
+
+fetchCategories();
 fetchMenu();
+
+function getCoffee(category) {
+    coffees.innerHTML = ''
+    // otherCatg.innerHTML = ''
+    h1.style.display='none'
+    const filteredCoffee = menuData.filter(item => item.subcategory === category).map(item => {
+        mTitle.innerHTML = `<p>Menu/ <b>${item.subcategory}</b></p>`
+        title.innerHTML = `${item.subcategory}`
+        return `<div class="coffee">
+                    <a href="basket.htm" onclick="goSelectedCoffee(${item.id})">
+                        <img src="${item.img}">
+                        <h3>${item.name}</h3>
+                    </a>
+                </div>`;
+    }).join('');
+    coffees.innerHTML = filteredCoffee;
+    console.log('salam');
+}
+
+function goSelectedCoffee(id) {
+    const index = menuData.find(item => item.id === id)
+    titleTag.innerHTML = `${index.name}`
+    console.log('Coffee item clicked:', index);
+}
 
 function Favorites() {
     menuAll.innerHTML = ''
@@ -92,8 +123,6 @@ function Previous() {
         </div>`
 }
 
-const content = document.querySelector(".content")
-const num = document.querySelector(".num")
 function ulduzlar(arg) {
     if(arg == 25){
         content.innerHTML = `
