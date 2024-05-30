@@ -214,8 +214,14 @@ footer hr{
 .txtgray{color: #737272;}
 .basketCof,.fixedGreen ,.lastDiv{background: #1f3933;}
 .basketCof img{width: 300px; height: 300px;}
-.basketCof h1{font-size: 1.8em;}
+.basketCof h1{font-size: 1.5em;}
 .basketCof p{padding: 20px 0; color: #949393; font-size: 1.2em;}
+.fixed{
+    height: 40vh;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 .fixedGreen{
     height: 10vh;
     position: fixed;
@@ -287,6 +293,7 @@ footer hr{
     font-family: 'soDoSans';
     font-size: 1em;
     width: 100%;
+    background: transparent !important;
     margin: 20px 0;
     border-radius: 10px;
     outline-color: #00754a;
@@ -593,9 +600,10 @@ footer hr{
     .inner-sum img{width: 210px;}
     #star-left{background: url('../img/lstar.svg')center/cover;}
     #star-right{background: url('../img/rstar.svg')center/cover; }
+    .basketCof {height: 50vh;}
     .basketCof h1{font-size: 2.5em;}
     .basketCof p{font-size: 1.7em;}
-    .basketCof .wrapper{align-items: center;gap: 10vw;}
+    .basketCof .wrapper{align-items: center; gap: 15vw;}
     .fixedGreen{height: 13vh; justify-content: space-around;}
     .fixedGreen .locator a div{
         display: initial;
@@ -639,4 +647,5 @@ footer hr{
     }
     .table{flex-direction: column;}
     .table-left,.table-right{width: 100%;}
+    .basketCof {height: inherit;}
 }
