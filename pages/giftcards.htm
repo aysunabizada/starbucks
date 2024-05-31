@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Starbucks Gift Cards: Starbucks (fake) Coffee Company</title>
+        <title>Starbucks (fake) Gift Cards: Starbucks Coffee Company</title>
         <link rel="icon" type="image/x-icon" href="../img/starbuck-favicon.png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -59,7 +59,7 @@
             </div>
         </header>
         <main class="giftcard">
-            <h4 class="wrapper">FEATURED</h4>
+            <h4 class="wrapper p20">FEATURED</h4>
             <div class="swiper mySwiper wrapper">
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -86,43 +86,76 @@
             </div> <br>
             <div class="recCard">
                 <div class="wrapper">
-                    <h2>Received a gift card?</h2>
-                    <span class="txtgray">Earns 2★Stars per $1</span>
-                    <button>Add or Reload</button>
-                    <button>Check Balance</button> 
+                    <div>
+                        <h2>Received a gift card?</h2>
+                        <span class="txtgray">Earns 2★Stars per $1</span>
+                    </div>
+                    <div class="df">
+                        <button>Add or Reload</button>
+                        <button>Check Balance</button> 
+                    </div>
                 </div>
             </div>
             <div class="wrapper">
-                <h4>BIRTHDAY</h4>
-                <div class="cards">
-                    <img src="../img/slide6.jpeg" alt="">
-                    <img src="../img/slide7.jpg" alt="">
-                    <img src="../img/slide8.jpg" alt="">
-                    <img src="../img/slide9.jpg" alt="">
-                    <!-- <img src="../img/slide5.jpg" alt=""> -->
-                    <!-- <img src="../img/slide6.jpeg" alt="">
-                    <img src="../img/slide7.jpg" alt="">
-                    <img src="../img/slide8.jpg" alt=""> -->
+                <h4 class="p20">BIRTHDAY</h4>
+                <div class="swiper mySwiper wrapper">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../img/slide6.jpeg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide7.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide8.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide10.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide11.jpg" alt=""></div>
+                    </div>
                 </div>
-                <h4>THANK YOU</h4>
-                <div class="cards">
-                    <img src="../img/slide11.jpg" alt="">
-                    <img src="../img/slide12.jpeg" alt="">
-                    <img src="../img/slide13.jpg" alt="">
-                    <img src="../img/slide14.jpg" alt="">
+                <h4 class="p20">THANK YOU</h4>
+                <div class="swiper mySwiper wrapper">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../img/slide11.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide12.jpeg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide13.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide14.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="../img/slide15.jpg" alt=""></div>
+                    </div>
                 </div>
-                <h4>GRADUATION</h4>
+                <h4 class="p20">GRADUATION</h4>
+                <div class="cards">
+                    <img src="../img/16.jpeg" alt="">
+                    <img src="../img/17.jpg" alt="">
+                    <img src="../img/18.jpg" alt="">
+                    <img src="../img/19.jpg" alt="">
+                </div>
                 <h4>CELEBRATION</h4>
+                <div class="cards">
+                    <img src="../img/20.jpg" alt="">
+                    <img src="../img/21.jpg" alt="">
+                    <img src="../img/22.jpeg" alt="">
+                    <img src="../img/23.jpg" alt="">
+                </div>
                 <h4>APPRECIATION</h4>
-                <h4>MILITARY APPRECIATION</h4>
+                <div class="cards">
+                    <img src="../img/22.jpeg" alt="">
+                    <img src="../img/24.jpg" alt="">
+                    <img src="../img/25.jpg" alt="">
+                </div>
                 <h4>BEST FRIEND'S DAY | 6/8</h4>
-                <h4>FATHER'S DAY | 6/16</h4>
-                <h4>AFFECTION</h4>
-                <h4>WORKPLACE</h4>
+                <div class="cards">
+                    <img src="../img/27.jpeg" alt="">
+                    <img src="../img/28.jpg" alt="">
+                    <img src="../img/29.jpg" alt="">
+                </div>
+                <h4>PRIDE</h4>
+                <div class="cards">
+                    <img src="../img/30.webp" alt="">
+                    <img src="../img/31.jpg" alt="">
+                </div> <br>
             </div>
         </main>
         <footer>
-            <div class="accardionswrapper">
+            <div class="accardions wrapper">
                 <button class="accordion">About us</button>
                 <div class="panel">
                     <ul>
@@ -243,6 +276,20 @@
             var swiper = new Swiper(".mySwiper", {
                 slidesPerView: 4,
                 spaceBetween: 30,
+                breakpoints: {
+                    350: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024:{
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    }
+                },
                 freeMode: true,
                 navigation: {
                     nextEl: '.swiper-button-next',

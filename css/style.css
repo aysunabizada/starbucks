@@ -59,7 +59,7 @@ nav .container{
     transition: .7s;
     cursor: pointer;
 }
-.noborder, .nav-reward button, .recCard button:first-child, .lastDiv button{
+.noborder, .nav-reward button, .lastDiv button{
     border: 1px solid #fff !important;
     background: transparent !important;
     color: #fff;
@@ -472,6 +472,7 @@ footer hr{
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+    transition: .5s;
 }
 .swiper-button-next,
 .swiper-button-prev {
@@ -483,7 +484,7 @@ footer hr{
     height: var(--swiper-navigation-size);
 }
 :root {--swiper-navigation-size: 15px;}
-.giftcard h4{padding: 30px 0; letter-spacing: 2px;}
+.giftcard h4{letter-spacing: 2px;}
 .egift{
     background: #edebe9;
     border-radius: 10px;
@@ -495,18 +496,29 @@ footer hr{
 .recCard{background: #d4e9e2}
 .recCard .wrapper{
     display: flex;
-    align-items: center;
-    height: 150px;
-    gap: 1vw;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 10px;
 }
-.cards{display: flex; gap: 2vw;}
+.recCard button:first-child{margin-right: 13px;  background-color: transparent;}
+.cards{
+    display: flex; 
+    gap: 2vw; 
+    overflow: auto; 
+    padding: 30px 0;
+}
+::-webkit-scrollbar{display: none;}
 .cards img{
-    width: 330px;
+    width: 150px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
 }
+.cards img:hover, .swiper-slide img:hover{transform: translateY(-12px);}
 
 /*            D E S K T O P            */
 @media only screen and (min-width: 768px) {
+    .cards img{width: 330px;}
     .wrapper{width: 81vw;}
     .fcolumn{flex-direction: row;}
     .w50{width: 50%;}
@@ -581,6 +593,22 @@ footer hr{
         font-weight: 700;
         font-size: 1.5em;
     }
+    .recCard .wrapper{
+        flex-direction: row;
+        align-items: center;
+        height: 150px;
+        gap: 1vw;
+    }
+    .recCard .wrapper div:first-child{
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        gap: 20px;
+    }
+    /* .swiper-slide img {
+        width: 100%;
+        height: 100%;
+    } */
     .step h3{padding: 30px 0;font-size: 1.2em;}
     .step a{color: #006241;}
     .step-text{max-width: 400px;}
