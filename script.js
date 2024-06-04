@@ -3,8 +3,6 @@ const menuAll = document.querySelector(".menu-all");
 const coffees = document.querySelector(".coffees");
 const content = document.querySelector(".content");
 const burger = document.querySelector(".burgermenu");
-// const basketCof = document.querySelector(".basketCof");
-// const otherCatg = document.querySelector(".otherCatg");
 const title = document.querySelector("#title");
 const mTitle = document.querySelector("#mTitle");
 const h1 = document.querySelector("#h1");
@@ -69,11 +67,8 @@ fetch('https://starbucks.yetim.me/categories')
         })
     })
 
-
-
 function getCoffee(category) {
     coffees.innerHTML = ''
-    // otherCatg.innerHTML = ''
     h1.style.display='none'
     const filteredCoffee = menuData.filter(item => item.subcategory === category).map(item => {
         mTitle.innerHTML = `<p>Menu/ <b>${item.subcategory}</b></p>`
@@ -89,19 +84,6 @@ function getCoffee(category) {
     console.log('salam');
 }
 
-// function goSelectedCoffee(id) {
-//     const index = menuData.find(item => item.id === id)
-//     titleTag.innerHTML = `${index.name}`
-//     console.log('Coffee item clicked:', index);
-//     basketCof.innerHTML = `
-//                 <div class="wrapper df txtwhite">
-//                     <img src="${index.img}" alt="">
-//                     <div>
-//                         <h1>${index.name}</h1>
-//                         <p>${index.sizes[1].calories} <svg aria-hidden="true" class="valign-middle absoluteCenter" focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="width: 16px; height: 16px; overflow: visible; fill: currentcolor;"><path d="M12 1.35C6.118 1.35 1.35 6.118 1.35 12c0 5.882 4.768 10.65 10.65 10.65 5.882 0 10.65-4.768 10.65-10.65 0-5.882-4.768-10.65-10.65-10.65zm0 1.5c5.053 0 9.15 4.097 9.15 9.15s-4.097 9.15-9.15 9.15S2.85 17.053 2.85 12 6.947 2.85 12 2.85zm-.75 7.928v6.486c0 .414.336.75.75.75s.75-.336.75-.75v-6.486c0-.414-.336-.75-.75-.75s-.75.336-.75.75zm1.5-3.056v-.61c0-.415-.336-.75-.75-.75s-.75.335-.75.75v.61c0 .414.336.75.75.75s.75-.336.75-.75z"></path><circle class="sb-icon-hover" cx="50%" cy="50%" fill="transparent" r="75%"></circle></svg></p>
-//                     </div>
-//                 </div>`
-// }
 function goSelectedCoffee(id) {
     menuAll.innerHTML = ''
     const index = menuData.find(item => item.id === id)
@@ -199,14 +181,6 @@ function goSelectedCoffee(id) {
             </div>`
     
 }
-// const basketCount = document.querySelector("#basketCount");
-// let bCount = 0;
-// function addOrder() {
-//     console.log("noldu pasinyan?");
-//     bCount++;
-//     basketCount.innerText = bCount;
-// }
-
 
 function Favorites() {
     menuAll.innerHTML = ''
