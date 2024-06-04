@@ -2,6 +2,7 @@ const drinks = document.querySelector("#drinks");
 const menuAll = document.querySelector(".menu-all");
 const coffees = document.querySelector(".coffees");
 const content = document.querySelector(".content");
+const burger = document.querySelector(".burgermenu");
 // const basketCof = document.querySelector(".basketCof");
 // const otherCatg = document.querySelector(".otherCatg");
 const title = document.querySelector("#title");
@@ -16,6 +17,10 @@ hamburger.addEventListener("click", function() {
     hamburger.classList.toggle("is-active");
 });
 
+//burgerrrrrr
+function openBurger(){
+    burger.classList.toggle('open')
+}
 //accardions
 var acc = document.getElementsByClassName("accordion");
     var i;

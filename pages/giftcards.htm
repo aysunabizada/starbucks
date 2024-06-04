@@ -25,7 +25,7 @@
                         </ul>
                     </div>
                     <div class="nav-right">
-                        <div class="bars">
+                        <div class="bars" onclick="openBurger()">
                             <div class="hamburger hamburger--spin" tabindex="0"
                                 aria-label="Menu" role="button" aria-controls="navigation">
                                 <div class="hamburger-box">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="burgermenu">
+            <div class="burgermenu" >
                 <div class="nav-left">
                     <ul>
                         <li><a href="menu.htm">Menu</a></li>
@@ -291,20 +291,11 @@
                     }
                 },
                 freeMode: true,
+                mousewheel: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-            });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            $(document).ready(function(){
-                $(".bars").click(function(){
-                    $(".burgermenu").animate({
-                        width: 'toggle'
-                    })
-                });
             });
         </script>
     </body>

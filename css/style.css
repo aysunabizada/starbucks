@@ -19,16 +19,20 @@ nav .container{
     align-items: center;
     justify-content: space-between;
 }
+
 .burgermenu{
-    display: none;
-    position: absolute;
-    z-index: 9999999999999;
-    right: 0 ;
+    transform: translateX(150%);
+    transition: transform 0.6s ease;
+    position: fixed;
+    z-index: 99999;
+    top: 80px;
+    left: 0;
+    height: 100%;
     background: #fff;
     padding: 40px;
     width: 80%;
-    height: 89.7vh;
 }
+.burgermenu.open{transform: translateX(25%)}
 .burgermenu .nav-right a, .burgermenu .nav-left ul{display: flex;}
 .burgermenu .nav-left ul{
     flex-direction: column;
@@ -347,11 +351,14 @@ footer hr{
 }
 
 /*     R E W A R D S     C S S  */
+.nav-reward, .category{
+    position: sticky;
+    top: 0;
+}
 .nav-reward .container{
     color: #fff;
     padding: 20px 0;
     display: flex;
-    /* position: fixed; */
     justify-content: space-between;
 }
 .star{
@@ -576,7 +583,7 @@ footer hr{
     .questions{margin: auto; max-width: 800px;}
     .star-text h2{font-size: 2.5em;}
     .star-text p{padding: 30px 0; font-size: 1.2em;}
-    .getstarted{ height: 80vh; padding: 80px;}
+    .getstarted{ padding: 80px;}
     .getstarted .title h2{font-size: 2em;}
     .steps{
         display: flex;
