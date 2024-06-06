@@ -7,6 +7,7 @@ const title = document.querySelector("#title");
 const mTitle = document.querySelector("#mTitle");
 const h1 = document.querySelector("#h1");
 const main = document.querySelector("main")
+const body = document.querySelector("body")
 
 
 //hamburger component
@@ -18,6 +19,7 @@ hamburger.addEventListener("click", function() {
 //burgerrrrrr
 function openBurger(){
     burger.classList.toggle('open')
+    body.classList.toggle('no-scroll')
 }
 //accardions
 var acc = document.getElementsByClassName("accordion");

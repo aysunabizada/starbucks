@@ -19,7 +19,6 @@ nav .container{
     align-items: center;
     justify-content: space-between;
 }
-
 .burgermenu{
     transform: translateX(150%);
     transition: transform 0.6s ease;
@@ -32,7 +31,8 @@ nav .container{
     padding: 40px;
     width: 80%;
 }
-.burgermenu.open{transform: translateX(25%)}
+.burgermenu.open{transform: translateX(25%);}
+.no-scroll{overflow-y: hidden}
 .burgermenu .nav-right a, .burgermenu .nav-left ul{display: flex;}
 .burgermenu .nav-left ul{
     flex-direction: column;
@@ -68,7 +68,6 @@ nav .container{
     background: transparent !important;
     color: #fff;
 }
-.no-scroll {overflow: hidden;}
 .lm{
     border: 1px solid #1e3932 !important;
     color: #1e3932;
